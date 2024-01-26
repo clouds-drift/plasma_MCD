@@ -10,7 +10,7 @@ library("BSgenome.Hsapiens.UCSC.hg19")
 library("reshape2")
 library("dplyr")
 source("MCD_fun.r")
-##input
+
 N_thread=12
 N_model=10
 genome="hg19"
@@ -23,16 +23,13 @@ imp.cut=0
 ntop=c(Inf)
 diff.dir="./QSEA_diff/215_training_set_other_nature_block_QSEA"
 cutoff1.tb=expand.grid(p.name,p.cut,lfc.cut,ntop,imp.cut)
-#feature1.saf="./QSEA_diff/215_training_set_other_nature_block_QSEA/all_sample/pvalue0.01_LFC1/total200.saf"
 feature1.bed="./QSEA_diff/215_training_set_other_nature_block_QSEA/all_sample/pvalue0.01_LFC1/total200.bed"
 if(any(!file.exists(feature1.bed))){stop(feature1.bed,"not found!\n")}
 feature1.name="pvalue0.01_LFC1_total200"
 
 bw.bias.dir="./bw_bias"
-cov.cut=1 ##RPM cut
-    #2 ##read cut
+cov.cut=1 
 names(cov.cut)="RPM"
-    #"read"
 miss.percent=1
 p.name="pvalue"
 p.cut=0.01
@@ -43,7 +40,6 @@ ntop=Inf
 value.type=c("raw")
 bias.trans=F
 diff.dir="./data/DMBR_diff/215_training_set_other_nature_block_RPM1_each0.3_miss1"
-    #"./DMBR_diff/175_training_set_other_nature_block_read2_miss1"
 cutoff2.tb=expand.grid(p.name, p.cut, delta.cut, base.cut, ntop, value.type, imp.cut)
 feature2.saf="./DMBR_diff/215_training_set_other_nature_block_RPM1_each0.3_miss1/all_sample/pvalue0.01_delta0.3_base0.3/total200.saf"
 feature2.bed="./DMBR_diff/215_training_set_other_nature_block_RPM1_each0.3_miss1/all_sample/pvalue0.01_delta0.3_base0.3/total200.bed"
@@ -52,7 +48,7 @@ feature2.name="RPM1_each0.3_pvalue0.01_delta0.3_base0.3_total200"
 model.name="GLMNET_model"
 cali.method="GLMNET_model"
 force=F
-##output
+
 DMR.model.dir="./DMR_model"
 DHMR.model.dir="./DHMR_model"
 Calibration.model.dir="./Calibration_model"
@@ -76,11 +72,11 @@ data.list=get_file_list(info.list, bw.norm.dir, bw.bias.dir)
 
 
 
-##main DMR model
+
 project.name=paste(N_model,"model_",nrow(discover.df),"_DMR_",feature1.name,sep="")
 main.dmr.model.dir=paste(DMR.model.dir,"/",project.name,"/Train_by",nrow(discover.df), sep="")
 
-##main DHMR model
+
 project.name=paste(N_model,"model_",nrow(discover.df),"_DHMR_",feature2.name,sep="") 
 main.dhmr.model.dir=paste(DHMR.model.dir,"/",project.name,"/Train_by",nrow(discover.df), sep="")
 
