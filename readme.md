@@ -3,7 +3,6 @@
 
 
 ## Requirements
-
 R version 4.3.0 (2023-04-21) and packages:
 * keras_2.11.1
 * GenomicRanges_1.52.0
@@ -21,6 +20,9 @@ R version 4.3.0 (2023-04-21) and packages:
 * dplyr_1.1.2
 * BSgenome.Hsapiens.UCSC.hg19_1.4.3
 * reshape2_1.4.4
+
+## Installation
+Copy this folder to your computer. It takes ~5 min.
 
 
 ## Patient and Sample information
@@ -44,5 +46,6 @@ R version 4.3.0 (2023-04-21) and packages:
 
 ## Script
 * "plasma_MCD.R": Run "Rscript plasma_MCD.R" can directly run the program.
+The running may take 30 minutes depending on the computer configuration. The expceted result is the predicted probabilty for each sample and ROC curves shown as in the manuscript.
 
 
