@@ -1,4 +1,0 @@
-brain_cancer	liver_cancer	normal
-brain_cancer	73	1	3
-liver_cancer	0	58	0
-normal	6	2	72
