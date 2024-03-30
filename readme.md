@@ -31,11 +31,13 @@ Copy this folder to your computer. It takes ~5 min.
 
 
 ## Models
-* "QSEA_diff/215_training_set_other_nature_block_QSEA": The folder of identified DMR from training set.
-* "DMBR_diff/215_training_set_other_nature_block_RPM1_each0.3_miss1": The folder of identified DHMR from training set.
-* "DMR_model": Include cancer specific DMR models from 10 subsets of training samples.
-* "DHMR_model": Include cancer specific DHMR models from 10 subsets of training samples.
-* "Calibration_model": Include calibration model combined by DMR and DHMR models.
+- "QSEA_diff/215_training_set_other_nature_block_QSEA": The folder of identified DMR from training set.
+- "DMBR_diff/215_training_set_other_nature_block_RPM1_each0.3_miss1": The folder of identified DHMR from training set.
+- "DMR_model": Include cancer specific DMR models from 10 subsets of training samples.
+  - "score" folder include the methylation (RPM) score at DMR for each sscf-MeDIP-Seq sample.
+- "DHMR_model": Include cancer specific DHMR models from 10 subsets of training samples.
+  - "score" folder include the hemi-methylation (bias) score at DHMR for each sscf-MeDIP-Seq sample. Score of "NA" was imputed as 0 in the model.
+- "Calibration_model": Include calibration model combined by DMR and DHMR models.
 
 ## Output
 * "Calibration_prediction": The folder include prediction results of DMR, DHMR and calibration model.
