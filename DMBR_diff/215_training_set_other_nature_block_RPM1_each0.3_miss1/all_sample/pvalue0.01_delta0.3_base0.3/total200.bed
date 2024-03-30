@@ -1,3 +1,4 @@
+#Chrom	Start	End	Name	Score
 chr11	67032815	67033358	liver_cancer_up_20	100	.
 chr4	84127328	84128515	brain_cancer_down_1	83.7884865351478	.
 chr6	169309817	169309887	normal_down_112	80.4469968873295	.
